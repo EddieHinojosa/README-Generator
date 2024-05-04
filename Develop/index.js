@@ -7,9 +7,7 @@ const fileName = "./README.md";
 
 
 // TODO: Create an array of questions for user input
-const questions = [];
-
-inquirer.prompt([
+const questions = [
     {
         type: "input",
         name: "projectTitle",
@@ -56,42 +54,44 @@ inquirer.prompt([
         name: "email",
         message: "What is your E-Mail address?"
     }
-])
+]
 
-.then(answers => {
-    const {projectTitle, description, installationInstructions, usageInformation, contributionGuidelines, testInstructions, license, githubUsername, email} = answers;
+// .then(answers => {
+//     const {projectTitle, description, installationInstructions, usageInformation, contributionGuidelines, testInstructions, license, githubUsername, email} = answers;
 
 
-    console.log (`Project Title: ${projectTitle}`);
-    console.log (`Project description: ${description}`);
-    console.log (`Project's Installation instructions: ${installationInstructions}`);
-    console.log (`Project's Usage Information: ${usageInformation}`);
-    console.log (`These are the Project's Contribution Guidelines: ${contributionGuidelines}`);
-    console.log (`Project's Test Instructions: ${testInstructions}`);
-    console.log (`License: ${license}`);
-    console.log (`Github Username: ${githubUsername}`);
-    console.log (`E-Mail: ${email}`);
-})
+//     console.log (`Project Title: ${projectTitle}`);
+//     console.log (`Project description: ${description}`);
+//     console.log (`Project's Installation instructions: ${installationInstructions}`);
+//     console.log (`Project's Usage Information: ${usageInformation}`);
+//     console.log (`These are the Project's Contribution Guidelines: ${contributionGuidelines}`);
+//     console.log (`Project's Test Instructions: ${testInstructions}`);
+//     console.log (`License: ${license}`);
+//     console.log (`Github Username: ${githubUsername}`);
+//     console.log (`E-Mail: ${email}`);
+// })
 
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
-        if (err) throw err;
-        console.log("README.md file has been created!");
-        //another method of writing the if statement
-        //(err) => err
-        // ? console.error(err)
-        // : console.log("README.md file has been created!");
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Success! Your README.md file has been created");
+        }
     });
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((data) => {
-        writeToFile(fileName, generateMarkdown(data));
+    inquirer.prompt(questions)
+    .then((answers) => {
+        writeToFile(fileName, generateMarkdown(answers));
     });
 }
 
 // Function call to initialize app
 init();
+
+
