@@ -29,6 +29,14 @@ This can be used as a starting template when crate a project to reduce the amoun
 <p>In teh file "Develop", run "node index.js", this will prompt the questions located in teh index.hs file and with the use of the generateMarkdown.js, it'll plug in your responses into a preset ReadMe template inwith your responses will be placed in the corresponding spots. </p>
 
 
+video
+
+
+https://github.com/EddieHinojosa/README-Generator/assets/161403923/b4d8eed3-c4be-4eb7-8978-3e96e0d4d138
+
+
+
+
 
 ## Built With
 
