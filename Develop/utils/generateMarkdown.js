@@ -45,7 +45,7 @@ function generateMarkdown(data) {
   ## License
   ${renderLicenseBadge(data.license)};
   ## Questions
-  For any further questions, please contact me at my email ${data.email}, and for additional project check out my GitHub at ${data.githubUsername}
+  For any further questions, please contact me at my email ${data.email}, and for additional project check out my GitHub at github.com/${data.githubUsername}
   `;
 }
 
