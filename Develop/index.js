@@ -36,7 +36,7 @@ const questions = [
     {
         type: "input",
         name: "testInstructions",
-        message: "What are the test instrcutions of your project?"
+        message: "What are the test instructions of your project?"
     },
     {
         type: "list",
